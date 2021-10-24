@@ -1,0 +1,305 @@
+DROP DATABASE IF EXISTS aj_hireit;
+
+CREATE DATABASE aj_hireit;
+
+USE aj_hireit;
+
+
+
+CREATE TABLE uzytkownicy 
+( id_uzytkownika int not null AUTO_INCREMENT,
+PRIMARY KEY (id_uzytkownika),
+imię varchar(50) NOT NULL,
+drugie_imię varchar(50) NOT NULL,
+nazwisko varchar(50) NOT NULL,
+data_urodzenia date NOT NULL,
+miasto varchar(50) NOT NULL,
+kod_pocztowy char(6) NOT NULL,
+nr_telefonu char(9) NOT NULL
+);
+
+
+INSERT INTO uzytkownicy(imię, drugie_imię, nazwisko, data_urodzenia, miasto, kod_pocztowy, nr_telefonu) VALUES
+('Maciej', '', 'Adamczyk', '1995-01-12', 'Warszawa', '25-152', '446953852'),
+('Aniela', '', 'Kopeć', '1993-05-18', 'Warszawa', '21-152', '968523468'),
+('Dawid', 'Piotr', 'Urbański', '1990-02-18', 'Warszawa', '21-152', '985647521'),
+('Gabriel', '', 'Gajewski', '1995-09-10', 'Wrocław', '45-250', '996587444'),
+('Oskar', '', 'Majchrzak', '2001-02-19', 'Wrocław', '45-250', '522458874'),
+('Tomasz', '', 'Wojciechowski', '1993-07-20', 'Białystok', '18-100', '523362005'),
+('Zofia', '', 'Białek', '1998-05-19', 'Warszawa', '21-104', '695325812'),
+('Natalia', 'Anna', 'Borkowska', '1999-12-09', 'Warszawa', '21-152', '658741258'),
+( 'Kacper', '', 'Krupa', '1997-05-08', 'Warszawa', '21-152', '658214320'),
+('Julia', '', 'Ciesielska', '1991-07-22', 'Białystok', '18-100', '523362005'),
+( 'Natasza', 'Alicja', 'Nowak', '1987-02-03', 'Wrocław', '45-250', '448758225'),
+( 'Jakub', 'Andrzej', 'Orzechowski', '2000-05-10', 'Warszawa', '21-152', '645325000'),
+('Sebastian', '', 'Kowalczyk', '1997-11-18', 'Warszawa', '21-152', '857412036'),
+('Karol', '', 'Jankowski', '1993-03-28', 'Warszawa', '21-009', '586932555'),
+( 'Mateusz', '', 'Kamiński', '1993-02-02', 'Białystok', '18-100', '523362005'),
+('Katarzyna', 'Maria', 'Jakubowska', '1997-07-10', 'Warszawa', '21-152', '333658250'),
+( 'Aleksandra', '', 'Stępień', '1996-08-14', 'Warszawa', '21-152', '633256985'),
+('Zofia', '', 'Laskowska', '1990-09-13', 'Warszawa', '12-152', '654852102'),
+('Igor', '', 'Ostrowski', '2000-07-20', 'Białystok', '18-100', '523362005'),
+('Julian', '', 'Nowicki', '1985-05-02', 'Warszawa', '21-152', '785741725'),
+('Łukasz', '', 'Stankiewicz', '1989-01-08', 'Warszawa', '21-152', '747851021'),
+( 'Karol', 'Wiesław', 'Woźniak', '1990-05-08', 'Warszawa', '21-152', '585745854'),
+('Dominika', '', 'Mikołajczyk', '2001-02-14', 'Wrocław', '45-250', '256987458'),
+('Artur', '', 'Małecki', '1999-10-06', 'Warszawa', '26-252', '558632547'),
+('Aleksander', '', 'Chrzanowski', '1985-04-01', 'Białystok', '18-100', '523362005');
+
+
+
+
+
+CREATE TABLE java (
+  id_uzytkownika int not null,
+FOREIGN KEY(id_uzytkownika) REFERENCES uzytkownicy (id_uzytkownika),
+  technologia varchar(50) NOT NULL,
+  java_poziom INT(2) NOT NULL
+); 
+
+INSERT INTO java(id_uzytkownika, technologia, java_poziom) VALUES
+('1', 'java', '85'),
+('2', 'java', '95'),
+('3', 'java', '83'),
+('4', 'java', '0'),
+('5', 'java', '75'),
+('6', 'java', '92'),
+('7', 'java', '98'),
+('8', 'java', '95'),
+('9', 'java', '65'),
+('10', 'java', '85'),
+('11', 'java', '88'),
+('12', 'java', '75'),
+('13', 'java', '65'),
+('14', 'java', '0'),
+('15', 'java', '85'),
+('16', 'java', '88'),
+('17', 'java', '75'),
+('18', 'java', '65'),
+('19', 'java', '0'),
+('20', 'java', '95'),
+('21', 'java', '65'),
+('22', 'java', '85'),
+('23', 'java', '88'),
+('24', 'java', '72'),
+('25', 'java', '69');
+
+
+CREATE TABLE CPP (
+  id_uzytkownika int not null,
+FOREIGN KEY(id_uzytkownika) REFERENCES uzytkownicy (id_uzytkownika),
+  technologia varchar(50) NOT NULL,
+  cpp_poziom INT(2) NOT NULL
+); 
+
+INSERT INTO CPP(id_uzytkownika, technologia, cpp_poziom) VALUES
+('1', 'C++', '85'),
+('2', 'C++', '95'),
+('3', 'C++', '83'),
+('4', 'C++', '0'),
+('5', 'C++', '75'),
+('6', 'C++', '92'),
+('7', 'C++', '0'),
+('8', 'C++', '95'),
+('9', 'C++', '75'),
+('10', 'C++', '85'),
+('11', 'C++', '88'),
+('12', 'C++', '79'),
+('13', 'C++', '65'),
+('14', 'C++', '0'),
+('15', 'C++', '69'),
+('16', 'C++', '88'),
+('17', 'C++', '58'),
+('18', 'C++', '65'),
+('19', 'C++', '96'),
+('20', 'C++', '95'),
+('21', 'C++', '0'),
+('22', 'C++', '85'),
+('23', 'C++', '88'),
+('24', 'C++', '72'),
+('25', 'C++', '0');
+
+CREATE TABLE PHP (
+  id_uzytkownika int not null,
+FOREIGN KEY(id_uzytkownika) REFERENCES uzytkownicy (id_uzytkownika),
+  technologia varchar(50) NOT NULL,
+  php_poziom INT(2) NOT NULL
+); 
+
+INSERT INTO PHP(id_uzytkownika, technologia, php_poziom) VALUES
+('1', 'PHP', '85'),
+('2', 'PHP', '95'),
+('3', 'PHP', '83'),
+('4', 'PHP', '0'),
+('5', 'PHP', '75'),
+('6', 'PHP', '82'),
+('7', 'PHP', '0'),
+('8', 'PHP', '95'),
+('9', 'PHP', '75'),
+('10', 'PHP', '85'),
+('11', 'PHP', '58'),
+('12', 'PHP', '79'),
+('13', 'PHP', '95'),
+('14', 'PHP', '50'),
+('15', 'PHP', '0'),
+('16', 'PHP', '88'),
+('17', 'PHP', '58'),
+('18', 'PHP', '95'),
+('19', 'PHP', '96'),
+('20', 'PHP', '0'),
+('21', 'PHP', '80'),
+('22', 'PHP', '55'),
+('23', 'PHP', '88'),
+('24', 'PHP', '72'),
+('25', 'PHP', '90');
+
+CREATE TABLE HTML (
+  id_uzytkownika int not null,
+FOREIGN KEY(id_uzytkownika) REFERENCES uzytkownicy (id_uzytkownika),
+  technologia varchar(50) NOT NULL,
+  html_poziom INT(2) NOT NULL
+); 
+
+INSERT INTO HTML(id_uzytkownika, technologia, html_poziom) VALUES
+('1', 'HTML', '85'),
+('2', 'HTML', '95'),
+('3', 'HTML', '93'),
+('4', 'HTML', '80'),
+('5', 'HTML', '75'),
+('6', 'HTML', '72'),
+('7', 'HTML', '90'),
+('8', 'HTML', '65'),
+('9', 'HTML', '75'),
+('10', 'HTML', '100'),
+('11', 'HTML', '58'),
+('12', 'HTML', '79'),
+('13', 'HTML', '95'),
+('14', 'HTML', '50'),
+('15', 'HTML', '90'),
+('16', 'HTML', '88'),
+('17', 'HTML', '100'),
+('18', 'HTML', '95'),
+('19', 'HTML', '96'),
+('20', 'HTML', '90'),
+('21', 'HTML', '80'),
+('22', 'HTML', '55'),
+('23', 'HTML', '88'),
+('24', 'HTML', '72'),
+('25', 'HTML', '90');
+
+
+CREATE TABLE CSS (
+  id_uzytkownika int not null,
+FOREIGN KEY(id_uzytkownika) REFERENCES uzytkownicy (id_uzytkownika),
+  technologia varchar(50) NOT NULL,
+  css_poziom INT(2) NOT NULL
+); 
+
+INSERT INTO CSS(id_uzytkownika, technologia, css_poziom) VALUES
+('1', 'CSS', '75'),
+('2', 'CSS', '85'),
+('3', 'CSS', '93'),
+('4', 'CSS', '80'),
+('5', 'CSS', '15'),
+('6', 'CSS', '72'),
+('7', 'CSS', '90'),
+('8', 'CSS', '15'),
+('9', 'CSS', '75'),
+('10', 'CSS', '100'),
+('11', 'CSS', '58'),
+('12', 'CSS', '59'),
+('13', 'CSS', '95'),
+('14', 'CSS', '50'),
+('15', 'CSS', '90'),
+('16', 'CSS', '88'),
+('17', 'CSS', '100'),
+('18', 'CSS', '95'),
+('19', 'CSS', '96'),
+('20', 'CSS', '90'),
+('21', 'CSS', '60'),
+('22', 'CSS', '85'),
+('23', 'CSS', '88'),
+('24', 'CSS', '92'),
+('25', 'CSS', '90');
+
+CREATE TABLE JS (
+  id_uzytkownika int not null,
+FOREIGN KEY(id_uzytkownika) REFERENCES uzytkownicy (id_uzytkownika),
+  technologia varchar(50) NOT NULL,
+  js_poziom INT(2) NOT NULL
+); 
+
+INSERT INTO JS(id_uzytkownika, technologia, js_poziom) VALUES
+('1', 'JS', '25'),
+('2', 'JS', '85'),
+('3', 'JS', '63'),
+('4', 'JS', '80'),
+('5', 'JS', '15'),
+('6', 'JS', '72'),
+('7', 'JS', '90'),
+('8', 'JS', '15'),
+('9', 'JS', '75'),
+('10', 'JS', '100'),
+('11', 'JS', '88'),
+('12', 'JS', '59'),
+('13', 'JS', '25'),
+('14', 'JS', '50'),
+('15', 'JS', '90'),
+('16', 'JS', '88'),
+('17', 'JS', '90'),
+('18', 'JS', '95'),
+('19', 'JS', '96'),
+('20', 'JS', '50'),
+('21', 'JS', '60'),
+('22', 'JS', '85'),
+('23', 'JS', '88'),
+('24', 'JS', '72'),
+('25', 'JS', '90');
+
+
+CREATE TABLE jezyki_obce (
+  id_uzytkownika int not null,
+FOREIGN KEY(`id_uzytkownika`) REFERENCES uzytkownicy (`id_uzytkownika`),
+  jezyk varchar(50) NOT NULL,
+  poziom CHAR(2) NOT NULL
+); 
+
+
+
+INSERT INTO jezyki_obce(id_uzytkownika, jezyk, poziom) VALUES
+('1', 'angielski' , 'B2'),
+('1', 'niemiecki' , 'B1'),
+('2', 'angielski' , 'C1'),
+('3', 'angielski' , 'B2'),
+('4', 'angielski' , 'B2'),
+('5', 'angielski' , 'B2'),
+('5', 'rosyjski' , 'B2'),
+('6', 'angielski' , 'B2'),
+('7', 'angielski' , 'B2'),
+('8', 'angielski' , 'B1'),
+('9', 'angielski' , 'B2'),
+('10', 'angielski' , 'A2'),
+('10', 'niemiecki' , 'C1'),
+('11', 'angielski' , 'B2'),
+('12', 'angielski' , 'B2'),
+('13', 'angielski' , 'B2'),
+('14', 'angielski' , 'C1'),
+('15', 'angielski' , 'C1'),
+('16', 'angielski' , 'B1'),
+('17', 'angielski' , 'B2'),
+('18', 'angielski' , 'B2'),
+('19', 'angielski' , 'B2'),
+('20', 'angielski' , 'B2'),
+('20', 'niemiecki' , 'B2'),
+('20', 'francuski' , 'B2'),
+('21', 'niemiecki' , 'B1'),
+('22', 'angielski' , 'B2'),
+('23', 'angielski' , 'B2'),
+('24', 'angielski' , 'B2'),
+('25', 'angielski' , 'A2');
+
+
+
+
+
+
