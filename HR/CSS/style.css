@@ -1,0 +1,22 @@
+<<<<<<< HEAD
+html {
+    box-sizing: border-box;
+    background-color: #fffaf0c2;
+}
+
+*,
+ ::after,
+ ::before {
+    box-sizing: inherit;
+=======
+html {
+    box-sizing: border-box;
+    background-color: #fffaf0c2;
+}
+
+*,
+ ::after,
+ ::before {
+    box-sizing: inherit;
+>>>>>>> b7a717668d2da56f7528458d880765e2e11cec59
+}
